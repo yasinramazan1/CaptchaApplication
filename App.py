@@ -31,14 +31,14 @@ time.sleep(2)
 pytesseract.pytesseract.tesseract_cmd = r"C:/Program Files/Tesseract-OCR/tesseract.exe" # Tesseract OCR'nin çalıştırılabilmesi için path'ini tanımlıyoruz.
 text = pytesseract.image_to_string(Image.open("captchaScreenshot.png"), lang="tur") # Tesseract'a gönderilen fotoğraftan yazıyı okuma
 time.sleep(1)
-captchaText = browser.find_element(By.XPATH,"/html/body/form/div[5]/div[3]/div[1]/table/tbody/tr[4]/td[2]/span/input[1]")
-captchaText.send_keys(text) 
-time.sleep(2)
 userName = browser.find_element(By.XPATH,"/html/body/form/div[5]/div[3]/div[1]/table/tbody/tr[1]/td[2]/span/input[1]")
 userName.send_keys("5. Week ISS Captcha Application")
 time.sleep(1)
 password = browser.find_element(By.XPATH,"/html/body/form/div[5]/div[3]/div[1]/table/tbody/tr[2]/td[2]/span[1]/input[1]")
 password.send_keys("1234567890")
+time.sleep(2)
+captchaText = browser.find_element(By.XPATH,"/html/body/form/div[5]/div[3]/div[1]/table/tbody/tr[4]/td[2]/span/input[1]")
+captchaText.send_keys(text) 
 time.sleep(2)
 loginButton = browser.find_element(By.XPATH,"/html/body/form/div[5]/div[3]/div[1]/table/tbody/tr[5]/td[2]/table/tbody/tr/td[2]/span")
 loginButton.click() # Butona işlev kazandırma 
